@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+<h:head>
+</h:head>
+
+
+<h:body>
+    <f:view>
+        <h:form style="width: 500px;text-align: center;margin-left: 35%; margin-top: 5%;">
+            <p:panel header="Login" >
+                <br/>
+                <h:outputLabel for="username" value="Username:"/>
+                <br/>
+                <p:inputText id="username" value="#{Login.username}" required="true" />
+                <br/>
+                <br/>
+                <h:outputLabel for="password" value="Password:"/>
+                <br/>
+                <p:password id="password" value="#{Login.password}" toggleMask="true" redisplay="true" required="true"/>
+                <br/>
+                <br/>
+                <p:commandButton partialSubmit="false" value="Login" styleClass="mr-2" action="#{Login.login()}"/>
+                <p:button style="margin-left: 1%;" value="Register" styleClass="mr-2" outcome="register"></p:button>
+            </p:panel>
+        </h:form>
+    </f:view>
+</h:body>
+</html>

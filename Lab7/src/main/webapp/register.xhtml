@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+<h:head>
+
+</h:head>
+<h:body>
+    <f:view>
+        <p:button value="Back" styleClass="mr-2" outcome="index"></p:button>
+        <br/>
+        <br/>
+        <h:form style="width: 500px;text-align: center;margin-left: 35%; margin-top: 5%;">
+            <p:panel header="Register Form">
+                <h:outputLabel for="username" value="Username:"/>
+                <br/>
+                <p:inputText id="username" value="#{Register.username}" required="true" />
+                <br/>
+                <br/>
+                <h:outputLabel for="password" value="Password:"/>
+                <br/>
+                <p:password id="password" value="#{Register.password}" toggleMask="true" redisplay="true" required="true"/>
+                <br/>
+                <br/>
+                <h:outputLabel for="role" value="Role:"/>
+                <br/>
+                <p:selectOneMenu id="role" value="#{Register.role}" required="true">
+                    <f:selectItem itemLabel="Select One" itemValue=""/>
+                    <f:selectItem itemLabel="Admin" itemValue="admin"/>
+                    <f:selectItem itemLabel="Author" itemValue="author"/>
+                </p:selectOneMenu>
+                <br/>
+                    <br/>
+                <p:commandButton partialSubmit="false" value="Register  " styleClass="mr-2" action="#{Register.register()}"/>
+            </p:panel>
+        </h:form>
+    </f:view>
+</h:body>
+</html>
